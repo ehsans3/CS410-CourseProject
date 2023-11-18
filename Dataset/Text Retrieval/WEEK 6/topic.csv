@@ -1,0 +1,187 @@
+topic_name,description
+Natural Language Processing (NLP),"This topic covers the technique for processing natural language to obtain understanding, involving lexical analysis, semantic analysis, and parsing. It also discusses the challenges of NLP, such as ambiguity and the need for common sense and reasoning."
+State of the Art of NLP,"This topic discusses the current capabilities and limitations of NLP, including the accuracy of part-of-speech tagging and parsing, the ability to perform semantic analysis and inference, and the difficulties in performing deep semantic analysis and speech act analysis."
+Relation between NLP and Text Retrieval,"This topic explores how NLP techniques are used in text retrieval, the use of shallow NLP techniques in search engines, and the need for deeper NLP techniques for complex search tasks and question answering."
+Text Access,"This topic discusses strategies to help users access text data, focusing on how a text information system can help users access the relevant text data."
+Push vs Pull Strategies,"This topic discusses two different ways to connect users with information: the pull mode, where users initiate the information access process, and the push mode, where the system pushes or recommends information to the user."
+Querying vs Browsing,"This topic discusses two ways to help users in the pull mode: querying, where a user enters a query and the system returns relevant documents, and browsing, where users navigate to relevant information by following the paths supported by the structures of documents."
+Recommender System,"This topic discusses the recommender system used in the push mode of information access, where the system interacts with the user, learns their interest, and recommends relevant information."
+Search Engine,"This topic discusses the search engine used in the pull mode of information access, where users enter a query and browse the results to find relevant information."
+Information Filtering and Information Retrieval,"This topic discusses the relationship between information filtering, similar to information recommendation or the push mode of information access, and information retrieval, similar to the pull mode of information access."
+Text Retrieval,"This topic covers the definition of text retrieval, a task where a system responds to a user's query with relevant documents, and the difference between text retrieval and database retrieval."
+Document Selection vs Document Ranking,"This topic explores two strategies for responding to a user's query: document selection, which determines whether a document is relevant or not, and document ranking, which ranks documents based on their likelihood of relevance."
+Probability Ranking Principle,"This topic discusses the theoretical justification for document ranking, known as the probability ranking principle, which states that returning a ranked list of documents in descending order of probability that a document is relevant to the query is the optimal strategy."
+Challenges in Designing a Search Engine,"This topic highlights the main technical challenge in designing a search engine, which is the design of an effective ranking function."
+Text Retrieval Methods,"This topic covers the problem of text retrieval, focusing on the design of a ranking function to rank documents for a query."
+Retrieval Models,"This topic discusses the different kinds of retrieval models designed over many decades, categorizing them into models based on similarity, probabilistic models, models based on probabilistic inference, and models using axiomatic thinking."
+Common Form of a State of the Art Retrieval Model,"This topic examines the common form of a state of the art retrieval model, discussing the assumption of using bag of words to represent text, the score of a query, and the factors that affect the function such as term frequency, document length, and document frequency."
+Comparison of Major Models,"This topic compares the four major models that are generally regarded as state of the art retrieval models, highlighting that BM25 is probably the most popular model."
+Vector Space Retrieval Model,"This topic covers the basic idea of the vector space retrieval model, discussing how this model is a specific way of designing a ranking function for document retrieval."
+Assumptions in Vector Space Model,"This topic discusses the assumptions made in the vector space model, explaining that the model assumes that if a document is more similar to a query than another document, then the first document will be more relevant."
+Representation of Documents and Queries in Vector Space Model,"This topic covers how documents and queries are represented in the vector space model, explaining that each document and query is represented by a term vector, with each term defining one dimension."
+Limitations and Questions in Vector Space Model,"This topic discusses the limitations and unanswered questions in the vector space model, pointing out that the model does not define how to select the basic concepts, how to place documents and queries in the space, or how to define the similarity measure."
+Vector Space Model,"This topic discusses the vector space model, a particular approach to designing a ranking function, and how to use the general framework of the vector space model to derive a specific ranking function."
+Defining Dimensions and Vectors,"This topic covers how to define the dimensions and vectors in the vector space model, explaining that each word in the vocabulary can define a dimension and that a bit vector can represent both the query and a document."
+Measuring Similarity,"This topic discusses how to measure the similarity between the query vector and the document vector in the vector space model, explaining that a commonly used similarity measure is the dot product."
+Instantiating the Vector Space Model,"This topic covers how to instantiate the vector space model, explaining that the simplest vector space model is based on the bit vector, dot product similarity, and bag of words."
+Improving the Vector Space Model,"This topic discusses the need to improve the vector space model, explaining that the simple vector space model doesn't work well because it doesn't account for word frequency or the importance of certain words in the query."
+topic_name,description
+Vector Space Model,"Discusses the vector space model and its limitations, such as its inability to account for the frequency of unique query terms in a document and the importance of certain terms over others."
+Term Frequency,Introduces the concept of term frequency as a way to improve the vector space model by considering the number of times a term appears in a document.
+Inverse Document Frequency,"Discusses the concept of inverse document frequency (IDF), a statistical measure used to evaluate how important a word is to a document in a collection or corpus."
+TF-IDF Weighting,"Explores the use of TF-IDF (Term Frequency-Inverse Document Frequency) weighting in the vector space model, a numerical statistic that reflects how important a word is to a document in a collection or corpus."
+Improving the Vector Space Model,"Summarizes the lecture's discussion on improving the vector space model, highlighting the use of TF-IDF weighting and the placement of vectors as key improvements."
+TF Transformation,"Focuses on the TF (Term Frequency) transformation, a method used to solve the problem of documents receiving high scores due to high term frequency."
+TF-IDF Weighting Ranking Function,"Explains the TF-IDF weighting ranking function, a formula used to calculate the importance of a word in a document or a collection of documents."
+BM25 Transformation,"Introduces the BM25 transformation, a special transformation function that controls the influence of high term frequency."
+BM25 Ranking Function,"Discusses the BM25 ranking function, a state-of-the-art ranking function that incorporates the BM25 TF component."
+Document Length Normalization in the Vector Space Model,"Discusses the importance of document length normalization in the vector space model, explaining how longer documents should be penalized."
+Pivoted Length Normalization,"Introduces the concept of pivoted length normalization, a method that uses the average document length as a reference point."
+Vector Space Model Formulas,"Discusses the state of the vector space model formulas, including the pivoted length normalization vector space model and the BM25 or Okapi model."
+Dimension Instantiation in the Vector Space Model,"Explores the possibility of improving the instantiation of the dimension in the Vector Space Model, discussing different choices for dimension instantiation."
+Improving the Similarity Function,"Discusses potential improvements to the similarity function in the vector space model, mentioning alternative measures such as the cosine of the angle between two vectors or the Euclidean distance measure."
+Extensions of BM25,"Discusses extensions of the BM25 model, including BM25F for structured documents and BM25+ to address the over-penalization of long documents."
+Summary of the Vector Space Model,"Provides a summary of the vector space model, emphasizing the use of similarity for relevance, the representation of queries and documents as vectors, and the effectiveness of BM25 and pivoted normalization."
+Text Retrieval Systems,"Covers the implementation of text retrieval systems, specifically the construction of a search engine, and the architecture of a typical text retrieval system."
+Search Engine System Parts,"Delves into the three main parts of a search engine system: the indexer, the scorer, and the feedback mechanism."
+Tokenization,"Discusses the process of tokenization, which normalizes lexical units into the same form so that semantically similar words can be matched with each other."
+Inverted Index,"Explains the concept of an inverted index, a commonly used index in many search engines that supports basic search algorithms."
+Word Distribution in Text,"Covers the common phenomena of word distribution in text, characterized by Zipf's Law, and discusses the concept of stop words."
+Data Structures for Inverted Index,"Discusses the data structures used to store an inverted index, which includes a dictionary and postings, and the benefits of compressing the inverted index."
+Inverted Index Construction,"Discusses the process of constructing an inverted index, explaining how to handle large datasets that cannot fit into memory at once."
+Compression of Inverted Index,"Delves into the concept of compressing an inverted index to handle large postings, explaining the idea of leveraging skewed distributions of values and using variable-length encoding."
+Encoding Methods,"Explores different methods for encoding, including binary code, unary code, gamma code, and delta code."
+Uncompressing Inverted Index,"Explains the process of uncompressing an inverted index, detailing how to decode encoded integers and how to recover document IDs that have been compressed using a d-gap."
+Faster Search Using Inverted Index,"Discusses the use of an inverted index to speed up search processes, explaining how the scoring function of a document and a query is defined."
+Improving Efficiency,"Focuses on techniques to further improve the efficiency of search processes, discussing general techniques such as encoding and caching, pruning accumulators, and parallel processing."
+System Implementation,"Summarizes the discussion on system implementation, emphasizing the importance of an inverted index in supporting a search engine and the need for data preprocessing and compression."
+topic_name,description
+Evaluation of Text Retrieval Systems,Discusses the importance of evaluating text retrieval systems to determine which method works best. It emphasizes the need for user involvement in the evaluation process and the challenges associated with it.
+Reasons for Evaluation,Outlines the two main reasons for evaluation: to figure out which retrieval method works better and to assess the actual utility of a Text Retrieval system.
+What to Measure,"Lists the three major aspects to measure in a text retrieval system: effectiveness or accuracy, efficiency, and usability."
+Cranfield Evaluation Methodology,"Introduces the Cranfield Evaluation Methodology, a laboratory test of system components developed in the 1960s."
+Comparing Different Systems,Discusses how to compare different text retrieval systems using the same criteria or dataset.
+Defining Measures,"Discusses the need to define multiple measures to quantify the performance of text retrieval systems, as users have different perspectives on the results."
+Precision and Recall,"Delves deeper into the concepts of precision and recall, explaining how these measures are used to evaluate the performance of retrieval systems."
+F-Measure,"Introduces the F-measure, a method often used to combine precision and recall."
+Tradeoff between Precision and Recall,"Discusses the tradeoff between precision and recall, explaining that high recall often comes with low precision."
+Problem-Solving Methodology,Emphasizes the importance of understanding the problem well and thinking about the best solution when trying to solve a problem.
+Evaluating a Ranked List,Discusses the methods of evaluating a ranked list of results.
+Precision-Recall Curve,"Explains the precision-recall curve, which is a plot of precision-recall numbers at different positions."
+Average Precision,"Introduces the concept of average precision, a measure used to evaluate a ranked list."
+Mean Average Position (MAP),Discusses the concept of Mean Average Position (MAP) in the context of search engine queries.
+Geometric Mean Average Precision (gMAP),"Introduces the concept of gMAP, which is the geometric mean of average precision."
+Known Item Search,"Discusses the concept of a 'known item search', where there is precisely one relevant document or answer."
+Mean Reciprocal Rank (MRR),"Explains the concept of Mean Reciprocal Rank (MRR), which is the average of all the reciprocal ranks over a set of topics."
+Multiple Levels of Ratings,"Delves into the concept of multiple levels of ratings for documents, with examples given for three levels: very relevant, marginally relevant, and non-relevant."
+Cumulative Gain,"Introduces the concept of cumulative gain, which measures the total gain a user would have if they examine all the documents."
+Normalized Discounted Cumulative Gain (NDCG),"Covers the concept of Normalized Discounted Cumulative Gain (NDCG), a measure used for ranking systems."
+Statistical Significance Test,Delves into the importance of statistical significance tests in the evaluation of text retrieval systems.
+Pooling,Introduces the concept of pooling as a solution to the problem of making judgments when it's not feasible to judge all documents in a collection.
+Textual Evaluation Importance,Emphasizes the importance of textual evaluation in research and applications.
+topic_name,description
+Probabilistic Retrieval Model,"This topic discusses the design of ranking functions in text retrieval methods, the concept of a binary random variable, and the idea of estimating the probability of relevance. It also covers different variants of probabilistic models."
+Query Likelihood Retrieval Model,"This topic delves into the query likelihood retrieval model, explaining the concept of approximating the probability of relevance by the probability of a query given a document and relevance."
+Estimating the Probability of Relevance,"This topic explains how to estimate the probability of relevance using collected data and discusses the limitations of this approach, particularly when dealing with unseen queries or documents."
+Language Models,"This topic introduces language models, which are used to model text and compute the probability of text."
+Statistical Language Model,"This topic covers the introduction to statistical language models, which are used to model text data with probabilistic models."
+Unigram Language Model,"This topic delves into the unigram language model, where each word is generated independently."
+Maximum Likelihood Estimator,"This topic discusses the maximum likelihood estimator, which is used to estimate the parameters of a statistical model."
+Uses of Language Models,"This topic explores the different uses of language models, including representing topics and discovering word associations."
+Retrieval Function Design Using Language Models,"This topic previews the next lecture, which will discuss how language models can be used to design a retrieval function."
+Document Language Model,"This topic introduces the concept of a document language model, explaining how a user might draw a word not necessarily from the document but from a document model."
+Ranking Function,"This topic covers the ranking function in the query likelihood retrieval model, explaining how the ranking function is the probability of observing a query given that the user is thinking of a document."
+Estimation Methods,This topic discusses different estimation methods for the document language model.
+Smoothing of Language Models,"This topic discusses the concept of smoothing in language models, explaining how to estimate a language model, the use of maximum likelihood estimate, and the problem of assigning zero probability to words not observed in the document."
+Query Likelihood Retrieval Method,"This topic focuses on the query likelihood retrieval method, explaining the ranking function based on query likelihood and the assumption of independence in generating each query word."
+Smoothing Techniques,This topic delves into the techniques used for smoothing a language model.
+Query Likelihood Ranking Function,This topic discusses the query likelihood ranking function in detail.
+Query Rewriting and Ranking Function,"This topic discusses the benefits of rewriting a query, which includes a better understanding of the ranking function and efficient computation of the query likelihood."
+TF-IDF Weighting and Document Length Normalization,This topic explains how the TF-IDF weighting and document length normalization are achieved in the ranking function.
+Scoring and Ranking Function,This topic discusses how the scoring of the ranking function is primarily based on the sum of weights on matched query terms.
+Smoothing Methods for Language Models in Probabilistic Retrieval Model,This topic discusses the use of smoothing methods in language models for information retrieval.
+Jelinek-Mercer Smoothing,"This topic introduces the Jelinek-Mercer smoothing method, which is a simple linear interpolation with a fixed coefficient."
+Dirichlet Prior or Bayesian Smoothing,"This topic discusses the Dirichlet Prior or Bayesian Smoothing method, which is similar to the Jelinek-Mercer method but uses a dynamic coefficient for linear interpolation."
+General Ranking Function for Smoothing,This topic discusses the general ranking function for smoothing with subtraction.
+JM Smoothing Method,The JM smoothing method is a specific smoothing method used in the ranking function.
+Dirichlet Prior Smoothing,Dirichlet Prior Smoothing is another smoothing method discussed.
+Probabilistic Models,The lecture discusses the use of probabilistic models in determining retrieval functions.
+Extensions of Basic Models,The lecture concludes by mentioning that there are many extensions of the basic models discussed.
+topic_name,description
+Feedback,Discusses the process of text retrieval and the role of feedback in improving the accuracy of search results.
+Relevance Feedback,Involves the user making explicit judgments about the relevance of search results.
+Pseudo Relevance Feedback,"Also known as blind or automatic feedback, it assumes that the top-ranked documents are relevant and uses these documents to improve the query."
+Implicit Feedback,"Involves observing how the user interacts with the search results, such as which documents they click on or skip."
+Vector Space Model,"Discusses the concept of feedback in text retrieval, particularly in the vector space model."
+Rocchio Feedback,"Introduces the Rocchio Feedback method, a highly effective method for feedback in the vector space model."
+Practical Application of Rocchio Feedback,Discusses the practical application of the Rocchio Feedback method.
+Language Modeling Approach,"Discusses the use of feedback in text retrieval, specifically in language modeling approaches."
+KL-Divergence Retrieval Model,"Delves into the KL-divergence retrieval model, explaining how it generalizes the frequency part of the query likelihood retrieval function into a language model."
+Feedback in KL-Divergence Model,Explains how feedback can be achieved in the KL-divergence model.
+Generative Mixture Model,Introduces the generative mixture model as a method to compute the feedback language model.
+Feedback Scenarios,"Discusses the three major feedback scenarios: relevance feedback, pseudo feedback, and implicit feedback."
+Web Search,Covers the importance of web search engines and the challenges and opportunities they present.
+Web Search Techniques,Delves into the new techniques developed for web search due to its unique challenges and opportunities.
+Search Engine Technologies,"Provides an overview of the basic search engine technologies, including the crawler, indexer, and retriever."
+Web Crawling,"Focuses on the process of web crawling, including the challenges and strategies involved."
+Incremental Crawling,"Explores the concept of incremental crawling, where only updated pages are crawled to minimize resource overhead."
+Web Indexing,Covers the process of creating a web scale index after crawling the web.
+Google File System,"Discusses the Google File System, a general file system that helps programmers manage files stored on a cluster of machines."
+MapReduce,"Introduces MapReduce, a general software framework for supporting parallel computation."
+Word Counting with MapReduce,Provides a detailed example of how MapReduce can be used for word counting.
+Inverted Index Construction with MapReduce,Discusses how MapReduce can be modified for parallel index construction.
+Web Scale Indexing Techniques,Summarizes the need for new techniques in web scale indexing.
+Link Analysis for Web Search,Covers the use of link analysis to improve web search results.
+Navigational Queries,"Discusses the concept of navigational queries, which are used to navigate to a specific type of page."
+Document Information and Web Pages,Focuses on the additional information that documents and web pages provide.
+Information Quality,Discusses the varying quality of information on the web and the need to consider many factors to improve ranking algorithms.
+Links on the Web,"Provides a detailed look at links on the web, discussing their importance in providing additional scoring signals."
+Authority and Hub Pages,"Discusses the concept of authority and hub pages, explaining how link information can be used to identify these types of pages."
+Google's PageRank,"Covers Google's PageRank, an algorithm used to capture page popularity and score authority."
+Random Surfing Model,Discusses the concept of a random surfing model where a surfer randomly chooses the next page to visit.
+Page Rank Score,"Explains the concept of a page rank score, which is the average probability that a surfer visits a particular page."
+Transition Matrix,"Delves into the concept of a transition matrix, which indicates how likely the random surfer would go from one page to another."
+Iterative Algorithm for Page Rank Score,Discusses the use of an iterative algorithm to solve the system of equations derived from the transition matrix.
+Propagation of Scores on the Web,Explains how the updating formula for PageRank scores can be interpreted as propagating scores over the web.
+Topic-Specific PageRank,"Introduces the concept of topic-specific PageRank, where the random surfer jumps to pages relevant to a specific query when bored."
+PageRank in Other Applications,"Discusses the use of PageRank in other applications, such as network analysis and social networks."
+PageRank,PageRank is a scoring system used to rank web pages in a search engine's results. It is a method that captures the assault.
+HITS Algorithm,"HITS (Hyperlink-Induced Topic Search) is an algorithm used to compute the scores for authorities and hubs. It operates on the assumption that good authorities are cited by good hubs and vice versa, thereby creating a reinforcement mechanism to improve the scoring for hubs and authorities."
+Adjacency Matrix,An adjacency matrix is a tool used in the HITS algorithm to represent a finite graph. The elements of the matrix indicate whether pairs of vertices are adjacent or not in the graph.
+Authority and Hub Scores,"Authority and hub scores are calculated based on the number of links to and from a page. A good authority is a page that is widely cited by good hubs, and a good hub is a page that cites many good authorities."
+Link Analysis Algorithms,Link analysis algorithms like PageRank and HITS are used to generate scores for web pages that can be used in a ranking function. These algorithms are very general and can have many applications in analyzing other graphs or networks.
+Anchor Text,Anchor text is the clickable text in a hyperlink that is used to improve the search engine optimization of a website. It is very useful to increase the text representation of a page.
+topic_name,description
+Learning to Rank,Discusses the use of machine learning to improve the ranking function in web search by combining different features.
+Features for Ranking,"Covers the different types of features that can be used for ranking, including content-based features, link-based scores, application of retrieval models to the ink text of the page, and URL features."
+Hypothesizing Relevance,Discusses the assumption that the probability of a document's relevance to a query is a function of all these features.
+Training and Learning,"Covers the task of training or learning, which involves estimating the parameters of the hypothesized function using training data."
+Regression-Based Method for Document Relevance,Discusses a method for determining the relevance of a document with respect to a query. It involves assuming that the relevance is related to a linear combination of all the features of the document.
+Estimating Parameters for the Regression-Based Method,Covers how to estimate the parameters for the regression-based method using a maximum likelihood estimator.
+Application of the Regression-Based Method,Explains how to apply the regression-based method once the parameters have been estimated. The scoring function can be used to rank documents for a particular query.
+Munster Learning Algorithms,Discusses algorithms that go beyond regression-based approaches and attempt to direct the optimizer retrieval method.
+Optimization Problem,Discusses the challenge with advanced approaches where the optimization problem becomes harder to solve.
+Learning Ranked Approaches,"Discusses approaches that can be applied to many other ranking problems, not just retrieval problems. They are used in recommender systems, computational advertising, and summarization among others."
+Machine Learning in Information Retrieval,"Discusses the use of machine learning in information retrieval, driven by changes in the environment of applications of retrieval systems, availability of training data, and the need for combining many features."
+Combating Spams,"Discusses how by combining many features, the robustness of ranking can be improved, which is desired for combating spams."
+Future Trends of Web Search and Intelligent Information Retrieval Systems,"Discusses the potential future trends in web search and intelligent information retrieval systems, including the trend towards more specialized and customized search engines."
+Personalization and Customization in Search Engines,"Explores the potential for personalization and customization in search engines, and the advantages of domain-specific search engines."
+Learning Over Time: The Future of Search Engines,"Discusses the concept of search engines learning over time, also known as lifetime or lifelong learning."
+Integration of Modes of Information Access,"Discusses the potential for integrating different modes of information access, such as search, navigation, recommendation, and filtering, into a comprehensive information management system."
+Task Support Systems,Explores the idea of systems that go beyond search to support user tasks.
+Data-User-Service Triangle,Introduces the concept of the Data-User-Service Triangle as a way to specify an information system.
+Future Intelligent Information Systems,"Discusses the future of intelligent information systems, including the trend towards personalization and complete user modeling, large-scale semantic analysis, and intelligent and interactive task support."
+Search Engines,"Covers the various aspects of search engines, including the problem of search and ranking, different methods for ranking, implementation of search engines, and how to evaluate a search engine."
+Recommender Systems,"Introduces recommender systems, which are tools that recommend information to users based on their interests."
+Content-Based Filtering,"Delves into the concept of content-based filtering, where the system recommends items based on the similarity of the items to the user's interests."
+Extending a Retrieval System for Information Filtering,Discusses how to extend a retrieval system for information filtering.
+Challenges in Threshold Learning for Filtering Systems,"Discusses the difficulties in learning the filtering problem, such as biased data, lack of labeled data, and the exploration versus exploitation tradeoff."
+Empirical Utility Optimization Strategy,Explains the strategy of optimizing the threshold based on historical data.
+Beta-Gamma Threshold Learning,"Introduces the beta-gamma threshold learning approach, which involves setting the threshold somewhere between the zero utility threshold and the optimal utility threshold."
+Strategies for Recommendation Systems,"Summarizes two strategies for recommendation or filtering systems: content-based, which looks at item similarity, and collaborative filtering, which looks at user similarity."
+Collaborative Filtering,"Discusses collaborative filtering, a strategy used in recommendation systems to predict a user's preferences based on the preferences of similar users."
+Basic Strategy for Predicting User Ratings,Discusses the basic strategy for predicting user ratings based on the similarity of users.
+Memory-Based Approach for Collaborative Filtering,Delves into the memory-based approach for collaborative filtering.
+Determining the Weight Function,Explores different ways to compute the weight function that determines the influence of a user on the prediction.
+Improving the User Similarity Measure,Discusses ways to improve the user similarity measure.
+Recommender Systems,"Discusses the concept of recommender systems, their implementation, user's expectations, and the challenges faced in filtering tasks. It also covers different strategies for filtering tasks, including content-based and collaborative filtering, and the potential for hybrid strategies. The future of recommender systems, including the use of context information and machine learning algorithms, is also touched upon."
