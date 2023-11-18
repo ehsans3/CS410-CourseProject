@@ -1,0 +1,18 @@
+topic_name,description
+Coupled Flexural and Torsional Vibration Analysis of Composite Beams,"Discusses the dynamic response of a composite beam under coupled flexural and torsional vibration, including the derivation of governing equations of motion and the effects of hysteretic damping."
+Geometric and Material Coupling in Composite Structures,Explores the impact of geometric and material coupling on the bending and torsional motion of composite structures and their effect on various engineering applications.
+Free Vibration Analysis of Composite Beams,"Delves into the free vibration analysis of composite beams, discussing various approaches to solving structural vibration problems."
+Influence of Bending-Torsion Stiffness Coupling on Dynamic Pressure,Investigates the effect of bending-torsion stiffness coupling on the flutter and divergence dynamic pressure of a cantilever wing.
+Hysteretic Damping in Composite Beams,"Discusses the concept of hysteretic damping in composite beams, which is the conversion of mechanical energy into thermal energy."
+Governing Equations for Coupled Bending and Torsional Vibration,Presents the development of the governing equations of motion for a coupled bending and torsional vibration of a composite beam.
+"Shear Force, Bending Moment, and Torque Distributions","Discusses the mathematical expressions for the shear force, bending moment, and torque distributions across the length of a beam."
+Harmonic Oscillation,Explores the assumption of harmonic oscillation for certain variables in the equations.
+Non-Dimensional Length and Differential Operator,Introduces the concept of non-dimensional length and the differential operator.
+Bending Displacement and Torsional Rotation Solutions,Presents the solutions to the bending displacement and torsional rotation.
+Sixth Order Ordinary Differential Equation,Discusses the simplification of the equations into a sixth order ordinary differential equation.
+Dynamic Stiffness Matrix,Discusses the formulation of the dynamic stiffness matrix of the composite beam.
+Natural Frequency and Modal Loss Factor,Explores the calculation of the natural frequencies of the system and the modal loss factor.
+Mode Shapes,"Discusses the mode shapes for the analysis, which are used to understand the behavior of the system."
+"Complex Natural Frequencies, Mode Shapes, and Modal Loss Factor","Discusses the computation of complex natural frequencies, mode shapes, and the modal loss factor."
+Comparison and Validation,Compares the results from the analysis with established results from literature to validate the analytical procedure and solutions obtained.
+Conclusion,Summarizes the findings and discusses their implications for the study of coupled bending and torsional vibration of a composite beam.
