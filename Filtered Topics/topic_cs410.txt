@@ -1,0 +1,409 @@
+description
+Natural Language Processing (NLP)  topic   the technique for processing natural language to obtain understanding involving lexical analysis semantic analysis and parsing.  also   the challenges of NLP such as ambiguity and the need for common sense and reasoning. 
+State of the Art of NLP  topic   the current capabilities and limitations of NLP including the accuracy of part-of-speech tagging and parsing the ability to perform semantic analysis and inference and the difficulties in performing deep semantic analysis and speech act analysis. 
+Relation between NLP and Text Retrieval  topic explores how NLP techniques are   in text retrieval the   of shallow NLP techniques in search engines and the need for deeper NLP techniques for complex search tasks and question answering. 
+Text Access  topic   strategies to help  rs access text data foc  on how a text information system can help  rs access the relevant text data. 
+Push vs Pull Strategies  topic   two   ways to connect  rs with information: the pull mode where  rs initiate the information access process and the push mode where the system pushes or recommends information to the  r. 
+Querying vs Browsing  topic   two ways to help  rs in the pull mode: querying where a  r enters a query and the system returns relevant documents and browsing where  rs navigate to relevant information by following the paths supported by the structures of documents. 
+Recommender System  topic   the recommender system   in the push mode of information access where the system interacts with the  r learns their interest and recommends relevant information. 
+Search Engine  topic   the search engine   in the pull mode of information access where  rs enter a query and browse the results to find relevant information. 
+Information Filtering and Information Retrieval  topic   the relationship between information filtering similar to information recommendation or the push mode of information access and information retrieval similar to the pull mode of information access. 
+Text Retrieval  topic   the definition of text retrieval a task where a system responds to a  r's query with relevant documents and the difference between text retrieval and database retrieval. 
+Document Selection vs Document Ranking  topic explores two strategies for responding to a  r's query: document selection which determines whether a document is relevant or not and document ranking which ranks documents based on their likelihood of relevance. 
+Probability Ranking Principle  topic   the theoretical justification for document ranking known as the probability ranking principle which states that returning a ranked list of documents in descending order of probability that a document is relevant to the query is the optimal strategy. 
+Challenges in Designing a Search Engine  topic highlights the main technical challenge in designing a search engine which is the design of an effective ranking function. 
+Text Retrieval Methods  topic   the problem of text retrieval foc  on the design of a ranking function to rank documents for a query. 
+Retrieval Models  topic   the   kinds of retrieval models designed over many decades categorizing them into models based on similarity probabilistic models models based on probabilistic inference and models   axiomatic thinking. 
+Common Form of a State of the Art Retrieval Model  topic examines the common form of a state of the art retrieval model discussing the assumption of   bag of words to represent text the score of a query and the factors that affect the function such as term frequency document length and document frequency. 
+Comparison of Major Models  topic compares the four major models that are generally regarded as state of the art retrieval models highlighting that BM25 is probably the most popular model. 
+Vector Space Retrieval Model  topic   the basic idea of the vector space retrieval model discussing how this model is a specific way of designing a ranking function for document retrieval. 
+Assumptions in Vector Space Model  topic   the assumptions made in the vector space model explaining that the model assumes that if a document is more similar to a query than another document then the first document will be more relevant. 
+Representation of Documents and Queries in Vector Space Model  topic   how documents and queries are represented in the vector space model explaining that each document and query is represented by a term vector with each term defining one dimension. 
+Limitations and Questions in Vector Space Model  topic   the limitations and unanswered questions in the vector space model pointing out that the model does not define how to select the basic concepts how to place documents and queries in the space or how to define the similarity measure. 
+Vector Space Model  topic   the vector space model a particular approach to designing a ranking function and how to   the general framework of the vector space model to derive a specific ranking function. 
+Defining Dimensions and Vectors  topic   how to define the dimensions and vectors in the vector space model explaining that each word in the vocabulary can define a dimension and that a bit vector can represent both the query and a document. 
+Measuring Similarity  topic   how to measure the similarity between the query vector and the document vector in the vector space model explaining that a commonly   similarity measure is the dot product. 
+Instantiating the Vector Space Model  topic   how to instantiate the vector space model explaining that the simplest vector space model is based on the bit vector dot product similarity and bag of words. 
+Improving the Vector Space Model  topic   the need to improve the vector space model explaining that the simple vector space model doesn't work well beca  it doesn't account for word frequency or the importance of certain words in the query. 
+description
+Vector Space Model Discusses the vector space model and its limitations such as its inability to account for the frequency of unique query terms in a document and the importance of certain terms over others. 
+Term FrequencyIntroduces the concept of term frequency as a way to improve the vector space model by considering the number of times a term appears in a document.
+Inverse Document Frequency Discusses the concept of inverse document frequency (IDF) a statistical measure   to evaluate how important a word is to a document in a collection or corpus. 
+TF-IDF Weighting Explores the   of TF-IDF (Term Frequency-Inverse Document Frequency) weighting in the vector space model a numerical statistic that reflects how important a word is to a document in a collection or corpus. 
+Improving the Vector Space Model Summarizes the lecture's discussion on improving the vector space model highlighting the   of TF-IDF weighting and the placement of vectors as key improvements. 
+TF Transformation Foc s on the TF (Term Frequency) transformation a method   to solve the problem of documents receiving high scores due to high term frequency. 
+TF-IDF Weighting Ranking Function Explains the TF-IDF weighting ranking function a formula   to calculate the importance of a word in a document or a collection of documents. 
+BM25 Transformation Introduces the BM25 transformation a special transformation function that controls the influence of high term frequency. 
+BM25 Ranking Function Discusses the BM25 ranking function a state-of-the-art ranking function that incorporates the BM25 TF component. 
+Document Length Normalization in the Vector Space Model Discusses the importance of document length normalization in the vector space model explaining how longer documents should be penalized. 
+Pivoted Length Normalization Introduces the concept of pivoted length normalization a method that  s the average document length as a reference point. 
+Vector Space Model Formulas Discusses the state of the vector space model formulas including the pivoted length normalization vector space model and the BM25 or Okapi model. 
+Dimension Instantiation in the Vector Space Model Explores the possibility of improving the instantiation of the dimension in the Vector Space Model discussing   choices for dimension instantiation. 
+Improving the Similarity Function Discusses potential improvements to the similarity function in the vector space model mentioning alternative measures such as the cosine of the angle between two vectors or the Euclidean distance measure. 
+Extensions of BM25 Discusses extensions of the BM25 model including BM25F for structured documents and BM25+ to address the over-penalization of long documents. 
+Summary of the Vector Space Model Provides a summary of the vector space model emphasizing the   of similarity for relevance the representation of queries and documents as vectors and the effectiveness of BM25 and pivoted normalization. 
+Text Retrieval Systems Covers the implementation of text retrieval systems specifically the construction of a search engine and the architecture of a typical text retrieval system. 
+Search Engine System Parts Delves into the three main parts of a search engine system: the indexer the scorer and the feedback mechanism. 
+Tokenization Discusses the process of tokenization which normalizes lexical units into the same form so that semantically similar words can be matched with each other. 
+Inverted Index Explains the concept of an inverted index a commonly   index in many search engines that supports basic search algorithms. 
+Word Distribution in Text Covers the common phenomena of word distribution in text characterized by Zipf's Law and   the concept of stop words. 
+Data Structures for Inverted Index Discusses the data structures   to store an inverted index which includes a dictionary and postings and the benefits of compressing the inverted index. 
+Inverted Index Construction Discusses the process of constructing an inverted index explaining how to handle large datasets that cannot fit into memory at once. 
+Compression of Inverted Index Delves into the concept of compressing an inverted index to handle large postings explaining the idea of leveraging skewed distributions of values and   variable-length encoding. 
+Encoding Methods Explores   methods for encoding including binary code unary code gamma code and delta code. 
+Uncompressing Inverted Index Explains the process of uncompressing an inverted index detailing how to decode encoded integers and how to recover document IDs that have been compressed   a d-gap. 
+Faster Search Using Inverted Index Discusses the   of an inverted index to speed up search processes explaining how the scoring function of a document and a query is defined. 
+Improving Efficiency Foc s on techniques to further improve the efficiency of search processes discussing general techniques such as encoding and caching pruning accumulators and parallel processing. 
+System Implementation Summarizes the discussion on system implementation emphasizing the importance of an inverted index in supporting a search engine and the need for data preprocessing and compression. 
+description
+Evaluation of Text Retrieval SystemsDiscusses the importance of evaluating text retrieval systems to determine which method works best.  emphasizes the need for  r involvement in the evaluation process and the challenges associated with it.
+Reasons for EvaluationOutlines the two main reasons for evaluation: to figure out which retrieval method works better and to assess the actual utility of a Text Retrieval system.
+What to Measure Lists the three major aspects to measure in a text retrieval system: effectiveness or accuracy efficiency and usability. 
+Cranfield Evaluation Methodology Introduces the Cranfield Evaluation Methodology a laboratory test of system components developed in the 1960s. 
+Comparing Different SystemsDiscusses how to compare   text retrieval systems   the same criteria or dataset.
+Defining Measures Discusses the need to define multiple measures to quantify the performance of text retrieval systems as  rs have   perspectives on the results. 
+Precision and Recall Delves deeper into the concepts of precision and recall explaining how these measures are   to evaluate the performance of retrieval systems. 
+F-Measure Introduces the F-measure a method often   to combine precision and recall. 
+Tradeoff between Precision and Recall Discusses the tradeoff between precision and recall explaining that high recall often comes with low precision. 
+Problem-Solving MethodologyEmphasizes the importance of understanding the problem well and thinking about the best solution when trying to solve a problem.
+Evaluating a Ranked ListDiscusses the methods of evaluating a ranked list of results.
+Precision-Recall Curve Explains the precision-recall curve which is a plot of precision-recall numbers at   positions. 
+Average Precision Introduces the concept of average precision a measure   to evaluate a ranked list. 
+Mean Average Position (MAP)Discusses the concept of Mean Average Position (MAP) in the context of search engine queries.
+Geometric Mean Average Precision (gMAP) Introduces the concept of gMAP which is the geometric mean of average precision. 
+Known em Search Discusses the concept of a 'known item search' where there is precisely one relevant document or answer. 
+Mean Reciprocal Rank (MRR) Explains the concept of Mean Reciprocal Rank (MRR) which is the average of all the reciprocal ranks over a set of topics. 
+Multiple Levels of Ratings Delves into the concept of multiple levels of ratings for documents with examples given for three levels: very relevant marginally relevant and non-relevant. 
+Cumulative Gain Introduces the concept of cumulative gain which measures the total gain a  r would have if they examine all the documents. 
+Normalized Discounted Cumulative Gain (NDCG) Covers the concept of Normalized Discounted Cumulative Gain (NDCG) a measure   for ranking systems. 
+Statistical Significance TestDelves into the importance of statistical significance tests in the evaluation of text retrieval systems.
+PoolingIntroduces the concept of pooling as a solution to the problem of making judgments when it's not feasible to judge all documents in a collection.
+Textual Evaluation ImportanceEmphasizes the importance of textual evaluation in research and applications.
+description
+Probabilistic Retrieval Model  topic   the design of ranking functions in text retrieval methods the concept of a binary random variable and the idea of estimating the probability of relevance.  also     variants of probabilistic models. 
+Query Likelihood Retrieval Model  topic delves into the query likelihood retrieval model explaining the concept of approximating the probability of relevance by the probability of a query given a document and relevance. 
+Estimating the Probability of Relevance  topic explains how to estimate the probability of relevance   collected data and   the limitations of this approach particularly when dealing with unseen queries or documents. 
+Language Models  topic introduces language models which are   to model text and compute the probability of text. 
+Statistical Language Model  topic   the introduction to statistical language models which are   to model text data with probabilistic models. 
+Unigram Language Model  topic delves into the unigram language model where each word is generated independently. 
+Maximum Likelihood Estimator  topic   the maximum likelihood estimator which is   to estimate the parameters of a statistical model. 
+Uses of Language Models  topic explores the    s of language models including representing topics and discovering word associations. 
+Retrieval Function Design Using Language Models  topic previews the next lecture which will discuss how language models can be   to design a retrieval function. 
+Document Language Model  topic introduces the concept of a document language model explaining how a  r might draw a word not necessarily from the document but from a document model. 
+Ranking Function  topic   the ranking function in the query likelihood retrieval model explaining how the ranking function is the probability of observing a query given that the  r is thinking of a document. 
+Estimation Methods topic     estimation methods for the document language model.
+Smoothing of Language Models  topic   the concept of smoothing in language models explaining how to estimate a language model the   of maximum likelihood estimate and the problem of assigning zero probability to words not observed in the document. 
+Query Likelihood Retrieval Method  topic foc s on the query likelihood retrieval method explaining the ranking function based on query likelihood and the assumption of independence in generating each query word. 
+Smoothing Techniques topic delves into the techniques   for smoothing a language model.
+Query Likelihood Ranking Function topic   the query likelihood ranking function in detail.
+Query Rewriting and Ranking Function  topic   the benefits of rewriting a query which includes a better understanding of the ranking function and efficient computation of the query likelihood. 
+TF-IDF Weighting and Document Length Normalization topic explains how the TF-IDF weighting and document length normalization are achieved in the ranking function.
+Scoring and Ranking Function topic   how the scoring of the ranking function is primarily based on the sum of weights on matched query terms.
+Smoothing Methods for Language Models in Probabilistic Retrieval Model topic   the   of smoothing methods in language models for information retrieval.
+Jelinek-Mercer Smoothing  topic introduces the Jelinek-Mercer smoothing method which is a simple linear interpolation with a fixed coefficient. 
+Dirichlet Prior or Bayesian Smoothing  topic   the Dirichlet Prior or Bayesian Smoothing method which is similar to the Jelinek-Mercer method but  s a dynamic coefficient for linear interpolation. 
+General Ranking Function for Smoothing topic   the general ranking function for smoothing with subtraction.
+JM Smoothing Method JM smoothing method is a specific smoothing method   in the ranking function.
+Dirichlet Prior SmoothingDirichlet Prior Smoothing is another smoothing method discussed.
+Probabilistic Models lecture   the   of probabilistic models in determining retrieval functions.
+Extensions of Basic Models lecture concludes by mentioning that there are many extensions of the basic models discussed.
+description
+FeedbackDiscusses the process of text retrieval and the role of feedback in improving the accuracy of search results.
+Relevance FeedbackInvolves the  r making explicit judgments about the relevance of search results.
+Pseudo Relevance Feedback Also known as blind or automatic feedback it assumes that the top-ranked documents are relevant and  s these documents to improve the query. 
+Implicit Feedback Involves observing how the  r interacts with the search results such as which documents they click on or skip. 
+Vector Space Model Discusses the concept of feedback in text retrieval particularly in the vector space model. 
+Rocchio Feedback Introduces the Rocchio Feedback method a highly effective method for feedback in the vector space model. 
+Practical Application of Rocchio FeedbackDiscusses the practical application of the Rocchio Feedback method.
+Language Modeling Approach Discusses the   of feedback in text retrieval specifically in language modeling approaches. 
+KL-Divergence Retrieval Model Delves into the KL-divergence retrieval model explaining how it generalizes the frequency part of the query likelihood retrieval function into a language model. 
+Feedback in KL-Divergence ModelExplains how feedback can be achieved in the KL-divergence model.
+Generative Mixture ModelIntroduces the generative mixture model as a method to compute the feedback language model.
+Feedback Scenarios Discusses the three major feedback scenarios: relevance feedback pseudo feedback and implicit feedback. 
+Web SearchCovers the importance of web search engines and the challenges and opportunities they present.
+Web Search TechniquesDelves into the new techniques developed for web search due to its unique challenges and opportunities.
+Search Engine Technologies Provides an overview of the basic search engine technologies including the crawler indexer and retriever. 
+Web Crawling Foc s on the process of web crawling including the challenges and strategies involved. 
+Incremental Crawling Explores the concept of incremental crawling where only updated pages are crawled to minimize resource overhead. 
+Web IndexingCovers the process of creating a web scale index after crawling the web.
+Google File System Discusses the Google File System a general file system that helps programmers manage files stored on a cluster of machines. 
+MapReduce Introduces MapReduce a general software framework for supporting parallel computation. 
+Word Counting with MapReduceProvides a detailed example of how MapReduce can be   for word counting.
+Inverted Index Construction with MapReduceDiscusses how MapReduce can be modified for parallel index construction.
+Web Scale Indexing TechniquesSummarizes the need for new techniques in web scale indexing.
+Link Analysis for Web SearchCovers the   of link analysis to improve web search results.
+Navigational Queries Discusses the concept of navigational queries which are   to navigate to a specific type of page. 
+Document Information and Web PagesFoc s on the additional information that documents and web pages provide.
+Information QualityDiscusses the varying quality of information on the web and the need to consider many factors to improve ranking algorithms.
+Links on the Web Provides a detailed look at links on the web discussing their importance in providing additional scoring signals. 
+Authority and Hub Pages Discusses the concept of authority and hub pages explaining how link information can be   to identify these types of pages. 
+Google's PageRank Covers Google's PageRank an algorithm   to capture page popularity and score authority. 
+Random Surfing ModelDiscusses the concept of a random surfing model where a surfer randomly chooses the next page to visit.
+Page Rank Score Explains the concept of a page rank score which is the average probability that a surfer visits a particular page. 
+Transition Matrix Delves into the concept of a transition matrix which indicates how likely the random surfer would go from one page to another. 
+erative Algorithm for Page Rank ScoreDiscusses the   of an iterative algorithm to solve the system of equations derived from the transition matrix.
+Propagation of Scores on the WebExplains how the updating formula for PageRank scores can be interpreted as propagating scores over the web.
+Topic-Specific PageRank Introduces the concept of topic-specific PageRank where the random surfer jumps to pages relevant to a specific query when bored. 
+PageRank in Other Applications Discusses the   of PageRank in other applications such as network analysis and social networks. 
+PageRankPageRank is a scoring system   to rank web pages in a search engine's results.  is a method that captures the assault.
+HITS Algorithm HITS (Hyperlink-Induced Topic Search) is an algorithm   to compute the scores for authorities and hubs.  operates on the assumption that good authorities are cited by good hubs and vice versa thereby creating a reinforcement mechanism to improve the scoring for hubs and authorities. 
+Adjacency MatrixAn adjacency matrix is a tool   in the HITS algorithm to represent a finite graph.  elements of the matrix indicate whether pairs of vertices are adjacent or not in the graph.
+Authority and Hub Scores Authority and hub scores are calculated based on the number of links to and from a page. A good authority is a page that is widely cited by good hubs and a good hub is a page that cites many good authorities. 
+Link Analysis AlgorithmsLink analysis algorithms like PageRank and HITS are   to generate scores for web pages that can be   in a ranking function. se algorithms are very general and can have many applications in analyzing other graphs or networks.
+Anchor TextAnchor text is the clickable text in a hyperlink that is   to improve the search engine optimization of a website.  is very  ful to increase the text representation of a page.
+description
+Learning to RankDiscusses the   of machine learning to improve the ranking function in web search by combining   features.
+Features for Ranking Covers the   types of features that can be   for ranking including content-based features link-based scores application of retrieval models to the ink text of the page and URL features. 
+Hypothesizing RelevanceDiscusses the assumption that the probability of a document's relevance to a query is a function of all these features.
+Training and Learning Covers the task of training or learning which involves estimating the parameters of the hypothesized function   training data. 
+Regression-Based Method for Document RelevanceDiscusses a method for determining the relevance of a document with respect to a query.  involves assuming that the relevance is related to a linear combination of all the features of the document.
+Estimating Parameters for the Regression-Based MethodCovers how to estimate the parameters for the regression-based method   a maximum likelihood estimator.
+Application of the Regression-Based MethodExplains how to apply the regression-based method once the parameters have been estimated.  scoring function can be   to rank documents for a particular query.
+Munster Learning AlgorithmsDiscusses algorithms that go beyond regression-based approaches and attempt to direct the optimizer retrieval method.
+Optimization ProblemDiscusses the challenge with advanced approaches where the optimization problem becomes harder to solve.
+Learning Ranked Approaches Discusses approaches that can be applied to many other ranking problems not just retrieval problems. y are   in recommender systems computational advertising and summarization among others. 
+Machine Learning in Information Retrieval Discusses the   of machine learning in information retrieval driven by changes in the environment of applications of retrieval systems availability of training data and the need for combining many features. 
+Combating Spams Discusses how by combining many features the robustness of ranking can be improved which is desired for combating spams. 
+Future Trends of Web Search and Intelligent Information Retrieval Systems Discusses the potential future trends in web search and intelligent information retrieval systems including the trend towards more specialized and customized search engines. 
+Personalization and Customization in Search Engines Explores the potential for personalization and customization in search engines and the advantages of domain-specific search engines. 
+Learning Over Time:  Future of Search Engines Discusses the concept of search engines learning over time also known as lifetime or lifelong learning. 
+Integration of Modes of Information Access Discusses the potential for integrating   modes of information access such as search navigation recommendation and filtering into a comprehensive information management system. 
+Task Support SystemsExplores the idea of systems that go beyond search to support  r tasks.
+Data-User-Service TriangleIntroduces the concept of the Data-User-Service Triangle as a way to specify an information system.
+Future Intelligent Information Systems Discusses the future of intelligent information systems including the trend towards personalization and complete  r modeling large-scale semantic analysis and intelligent and interactive task support. 
+Search Engines Covers the various aspects of search engines including the problem of search and ranking   methods for ranking implementation of search engines and how to evaluate a search engine. 
+Recommender Systems Introduces recommender systems which are tools that recommend information to  rs based on their interests. 
+Content-Based Filtering Delves into the concept of content-based filtering where the system recommends items based on the similarity of the items to the  r's interests. 
+Extending a Retrieval System for Information FilteringDiscusses how to extend a retrieval system for information filtering.
+Challenges in Threshold Learning for Filtering Systems Discusses the difficulties in learning the filtering problem such as biased data lack of labeled data and the exploration versus exploitation tradeoff. 
+Empirical Utility Optimization StrategyExplains the strategy of optimizing the threshold based on historical data.
+Beta-Gamma Threshold Learning Introduces the beta-gamma threshold learning approach which involves setting the threshold somewhere between the zero utility threshold and the optimal utility threshold. 
+Strategies for Recommendation Systems Summarizes two strategies for recommendation or filtering systems: content-based which looks at item similarity and collaborative filtering which looks at  r similarity. 
+Collaborative Filtering Discusses collaborative filtering a strategy   in recommendation systems to predict a  r's preferences based on the preferences of similar  rs. 
+Basic Strategy for Predicting User RatingsDiscusses the basic strategy for predicting  r ratings based on the similarity of  rs.
+Memory-Based Approach for Collaborative FilteringDelves into the memory-based approach for collaborative filtering.
+Determining the Weight FunctionExplores   ways to compute the weight function that determines the influence of a  r on the prediction.
+Improving the User Similarity MeasureDiscusses ways to improve the  r similarity measure.
+Recommender Systems Discusses the concept of recommender systems their implementation  r's expectations and the challenges faced in filtering tasks.  also     strategies for filtering tasks including content-based and collaborative filtering and the potential for hybrid strategies.  future of recommender systems including the   of context information and machine learning algorithms is also touched upon. 
+description
+Text Mining and Analytics  topic   the definition and understanding of text mining and analytics highlighting the difference between the two. Text mining emphasizes more on the process while analytics foc s more on the result. 
+High-Quality Information and Actionable KnowledgeDiscusses the two   results of text mining: high-quality information and actionable knowledge.
+Text RetrievalExplains the relationship between text retrieval and text mining.
+Text Data as a Special Kind of DataExplores the concept of viewing text data as data generated by humans as subjective sensors.
+Data MiningProvides an overview of the general problem of data mining.
+Natural Language Content Analysis Covers the foundation of text mining which is natural language content analysis. 
+Lexical AnalysisDiscusses the process of segmenting words in a sentence and categorizing them into syntactical categories.
+Syntactical ParsingCovers the process of understanding the relationship between words in a sentence.
+Semantic AnalysisDiscusses the process of mapping phrases and structures into real-world entities to understand the meaning of a sentence.
+Pragmatic Analysis Covers the process of understanding the purpose of a sentence also known as speech act analysis. 
+Challenges in Natural Language Processing Discusses the difficulties in natural language processing including word-level ambiguity syntactic ambiguity anaphora resolution and presupposition. 
+Textual Representation Discusses the   ways text can be represented starting from the most basic form as a string of characters. 
+Word SegmentationDelves into the process of breaking down text into individual words.
+Part of Speech TagsIntroduces the concept of adding part of speech tags to the text.
+Syntactic StructureDiscusses the process of parsing sentences to obtain their syntactic structure.
+Semantic AnalysisDelves into the process of recognizing entities and their relations in the text.
+Logical ConditionIntroduces the concept of adding predicates and inference rules to the text.
+Speech ActsDiscusses the concept of identifying the intent behind sentences.
+Role of Humans in Text MiningEmphasizes the importance of human involvement in text mining.
+Word Association Mining and AnalysisCovers the process of mining associations of words from text.
+Paradigmatic and Syntagmatic RelationsExplains the two basic word relations: paradigmatic and syntagmatic.
+Applications of Word RelationsDiscusses the various applications of word relations.
+Discovering Word AssociationsProvides intuitions on how to discover paradigmatic and syntagmatic relations.
+General Ideas for Discovering Word AssociationsSummarizes the general ideas for discovering word associations.
+Paradigmatics Relation DiscoveryCovers the concept of paradigmatic relation.
+Context RepresentationDelves into the   ways of representing the context of a word.
+Vector Space Model for ContextIntroduces the vector space model as a way to represent the context of a word.
+Expected Overlap of Words in Context (EOWC)Discusses the EOWC approach for matching the similarity of contexts.
+Potential Problems with EOWCIdentifies two potential problems with the EOWC approach.
+Paradigmatic Relation DiscoveryExplores the Expected Overlap of Words in Context method.
+Retrieval Heuristics in Text RetrievalIntroduces retrieval heuristics   in text retrieval.
+TF TransformationDiscusses the transformation of the raw count of a word in a document into a weight.
+IDF WeightingExplains the   of IDF (Inverse Document Frequency) weighting to penalize popular terms.
+BM25 Retrieval Model for Paradigmatic Relation MiningDiscusses how to adapt the BM25 retrieval model for paradigmatic relation mining.
+Discovering Syntagmatic RelationsIntroduces the concept of discovering syntagmatic relations.
+Summary of Discovering Paradigmatic RelationsSummarizes the main idea for discovering paradigmatic relations.
+description
+Syntagmatic Relation Discovery  topic   the concept of syntagmatic relations which are the relationships between words that have correlated co-occurrences.    how to discover these relations and the importance of context in understanding word associations. 
+Introduction to Entropy  topic introduces the concept of entropy a measure   in information theory to quantify the randomness of a variable.  explains how entropy is   to predict the occurrence of a word in a text segment and how it can indicate the difficulty of prediction. 
+Word Association Mining  topic delves into the process of word association mining specifically foc  on predicting the presence or absence of a word in a text segment.    the   of entropy in this prediction process and provides examples to illustrate the concept. 
+Random Variables and Probability topic   the concept of random variables and their probabilities.  explains how these probabilities are   to calculate entropy and provides examples   coin tossing to illustrate the concept.
+Word Prediction Using Entropy topic explores how entropy can be   for word prediction.    how words with high entropy are harder to predict and provides examples to illustrate this concept.
+Conditional Entropy  topic delves into the concept of conditional entropy a measure   to determine how much knowing the presence or absence of one word can help predict the presence or absence of another word.  is a tool   to discover syntagmatic relations. 
+Entropy and Uncertainty  topic explores the relationship between entropy and uncertainty.  explains that entropy measures the ease of predicting the presence or absence of a word and that knowing more information about a text segment can only reduce uncertainty not increase it. 
+Using Conditional Entropy for Syntagmatic Relation Mining  topic explains how conditional entropy can be   to mine syntagmatic relations.  involves computing the conditional entropy of one word given another and ranking candidate words in ascending order of conditional entropy. 
+Mutual Information topic briefly mentions the concept of mutual information as a solution to the problem of comparing conditional entropies across   words.  suggests that mutual information can be   to discover the strongest syntagmatic relations from an entire collection.
+Syntagmatic Relation Mining topic explores the application of mutual information in syntagmatic relation mining.  involves computing the mutual information between a specific word and other words to identify which words have a high mutual association.
+Computation of Mutual Information  topic explains the process of computing mutual information.  involves the   of a formula that computes the Kullback-Leibler (KL) divergence which measures the divergence between two distributions. 
+Maximum Likelihood Estimate  topic   the   of empirical count of events in observed data to estimate probabilities.  technique of maximum likelihood estimate is introduced where observed counts are normalized to compute probabilities. 
+Smoothing Technique  topic addresses the problem of zero counts in data.  smoothing technique is introduced which involves adding a small constant to counts to avoid zero probabilities. 
+Paradigmatic and Syntagmatic Relations topic   the two basic associations - paradigmatic and syntagmatic relations.  explains how these relations can be discovered   statistical approaches and how they can be combined for joint analysis.
+Context and Segment Definition topic   the importance of defining context and segment in discovering   flavors of paradigmatic and syntagmatic relations.
+Applications of Word Association Mining topic   the various applications of word association mining in both information retrieval and text and data mining.
+Topic Mining and Analysis topic   the concept of mining and analyzing the main ideas or themes discussed in text data.
+Applications of Topic Mining topic   the various applications that require the discovery of topics in text and their analysis.
+Context Variables in Topic Mining topic explores the role of context variables or metadata in topic mining.
+Tasks of Topic Mining and Analysis topic delves into the specific tasks involved in topic mining and analysis.
+Defining Topics in Topic Mining topic   the challenge of defining what exactly constitutes a topic in the context of topic mining. Different ways to define a topic will be explored in subsequent lectures.
+Topic Mining and Analysis Discusses the concept of topic mining and analysis defining a topic as a term and how to analyze the coverage of such topics in each document.  also   the tasks involved in topic mining and analysis which include discovering the topics and analyzing coverage. 
+Discovery of Topical Terms Delves into the process of discovering topical terms from a collection.    parsing text data to obtain candidate terms designing a scoring function to measure how good each term is as a topic and   statistical methods or domain-specific heuristics to discover the top k topical terms. 
+Computing Topic CoverageExplains how to compute the topic coverage in a document.  suggests counting the occurrences of terms that represent the topics and normalizing these counts to estimate the coverage probability for each topic.
+Evaluation of the Approach Evaluates the approach of treating a term as a topic.  identifies the problems with this approach such as lack of expressive power incomplete vocabulary coverage and word sense disintegration.  also suggests the need for considering related words and dealing with word ambiguity. 
+Probabilistic Topic Models for Topic Mining and Analysis Discusses the   of probabilistic topic models in topic mining and analysis.  addresses the problems of   a term as a topic and introduces the concept of   more words to describe a topic introducing weights on words and splitting ambiguous words to disambiguate its topic. 
+Representation of Topics Foc s on the representation of topics   word distribution.  explains how words related to a particular topic are given higher probabilities and words not related to the topic are given very small probabilities. 
+Generative Model for Text MiningIntroduces the concept of a generative model for text mining.  explains how a probabilistic model is designed to model how the data are generated.
+Overview of Statistical Language Models Covers the concept of Statistical Language Models which are probability distributions over word sequences. se models are context-dependent and can be   as a probabilistic mechanism for generating text. 
+Unigram Language Model Unigram Language Model is the simplest form of a language model.  assumes that each word is generated independently.  probability of a sequence of words is the product of the probability of each word.
+Sampling Process sampling process involves determining how likely it is to observe certain data points given a model.
+Estimation Process estimation process involves determining the parameters of a model given observed data.  best estimate of the parameters is the one that gives the observed data the maximum probability.
+Maximum Likelihood Estimation Discusses the concept of Maximum Likelihood Estimation a method of estimating the parameters of a statistical model. 
+Bayesian EstimationIntroduces Bayesian Estimation as an alternative to Maximum Likelihood Estimation.  explains how this method incorporates both the data and prior knowledge about the parameters.
+Bayesian Inference Delves deeper into Bayesian inference explaining how it is   to infer the distribution of parameter values. 
+Language Model Discusses the concept of a language model which is a probability distribution over text. 
+Probabilistic Topic ModelsDiscusses the   of probabilistic models in text mining.  foc s on the simplest case where only one topic is mined from a single document.
+Unigram Language ModelIntroduces the Unigram language model   in text mining.  model has as many parameters as there are words in the vocabulary.
+Maximum Likelihood Estimate Delves into the mathematical aspect of text mining specifically the maximum likelihood estimate problem. 
+Common Words in Topic RepresentationDiscusses the issue of common words appearing in high probability when   maximum likelihood estimator for topic representation.  challenge is to find a way to eliminate these common words to better characterize the topic.
+description
+Mixture of Unigram Language Models Discusses the concept of a mixture of unigram language models how to eliminate background words in a document and the idea of   another distribution to account for common words. 
+Probability of a Word from a Mixture Model Delves into the probability of observing a specific word from a mixture model explaining that the probability is a sum of   ways of generating the word. 
+Estimation of Model Parameters Discusses how to estimate the parameters of a mixture model   text data representing two kinds of information: the word distributions that represent topics and the coverage of each topic. 
+Likelihood Function and Maximum Likelihood EstimatorCovers the likelihood function of a mixture model and how to compute the maximum likelihood estimator.
+Mixture Model Estimation Discusses the estimation of parameters in a mixture model the motivation for   a mixture model and how to estimate the parameters of the model. 
+Probabilistic Topic Models Foc s on probabilistic topic models specifically how to   these models to estimate the parameters of a mixture model. 
+Behavior of a Mixture Model Delves into the behavior of a mixture model discussing the probabilities of words in a mixture model and how to optimize the likelihood function. 
+Maximizing the Likelihood Function Covers the process of maximizing the likelihood function in a mixture model explaining how to allocate probability mass between words to maximize the function. 
+Mixed Model Behavior and Response to Data Frequencies Discusses the behavior of the Mixed Model in response to data frequencies explaining how adding more words to a document changes the likelihood function. 
+Impact of Probability of ta sub B Explores the impact of the probability of choosing one of the two component models ta sub B. 
+Mixture Model Estimation and BehaviorDiscusses the estimation problem of the mixture model and some general behaviors of the estimator.
+Special Case of Fixing One Component to a Background Word DistributionCovers the special case of fixing one component to a background word distribution.
+Expectation-Maximization Algorithm Covers the introduction of the Expectation-Maximization (EM) algorithm which is a family of  ful algorithms for computing the maximum likelihood estimate of mixture models. 
+Bayesian Inference Discusses the Bayesian inference process where the prior belief is updated after observing the evidence. 
+Latent Variable IntroductionIntroduces the concept of a latent variable to denote whether a word is from the background or the topic.
+EM Algorithm Application Covers the application of the EM algorithm explaining how to initialize the parameter values randomly and then guess the values of the latent variable. 
+Expectation-Maximization (EM) AlgorithmDiscusses the general idea of the Expectation-Maximization (EM) Algorithm and introduces the concept of a hidden variable.
+E-step and M-step in EM Algorithm Delves deeper into the E-step and M-step of the EM Algorithm explaining how each step works and contributes to the overall process. 
+Computation in EM AlgorithmExplains the computation process in the EM Algorithm   a specific case.
+Log-likelihood in EM Algorithm Discusses the concept of log-likelihood in the EM Algorithm explaining that the likelihood increases with each iteration of the algorithm. 
+Use of EM Algorithm in Document Analysis Explores the application of the EM Algorithm in document analysis suggesting that the algorithm can be   to estimate the extent to which a document   background words versus content words. 
+EM Algorithm EM (Expectation-Maximization) algorithm is a hill-climbing algorithm   to find the maximum likelihood estimate of models.  involves computing a lower bound (E-step) and maximizing this lower bound (M-step).  starting point can significantly influence the outcome.
+E-Step and M-Step E-step involves computing the lower bound by predicting the values of hidden variables.  M-step exploits the augmented data to improve the estimate of parameters.
+Data Augmentation Data augmentation is done probabilistically assigning a probability distribution over the possible values of hidden variables.  results in a probabilistic split of event counts. 
+Probabilistic Latent Semantic Analysis (PLSA) PLSA is a topic model   to mine multiple topics from text documents.  can be   to decode the topics behind the text segment the topics and determine which words are from which distribution. 
+Topic Analysis Topic analysis involves identifying and separating   topics within a text.  has applications such as summarization segmentation and clustering of sentences. 
+Mining Multiple Topics from Text  involves the formal definition of the problem of mining multiple topics from text.    the inputs and outputs of this process including the collection number of topics vocabulary set text data topic category characterization and topic coverage for each document. 
+Probabilistic Modelling involves the generation of text that has multiple topics.    the likelihood function and the probability of observing a word from a mixture model.
+Parameter Estimation    the process of parameter estimation in PLSA.    the unknown parameters the constraints of the optimization problem and the process of finding the solutions to make the function reach its maximum. 
+Initialization and Convergence algorithm first initializes all the unknown parameters randomly.  then repeats until the likelihood converges.
+PLSA Model PLSA model is a mixture model with k unigram language models representing k topics.  also includes a predetermined background language model to help discover discriminative topics.
+Applications of PLSA Model  PLSA model can enable further analysis such as generating the temporal chains of topics categorizing the topics written by a particular author clustering terms and documents. 
+Latent Dirichlet Allocation (LDA)   the extension of PLSA into a fully generative model known as Latent Dirichlet Allocation or LDA.
+PLSA with Prior Knowledge    the extension of PLSA with prior knowledge allowing for a  r-controlled PLSA that not only listens to data but also to  r needs. 
+Bayesian Inference and Prior Preferences  delves into the   of Bayesian inference in topic modeling specifically how to   prior preferences to guide the analysis. 
+Maximum Likelihood Estimate and Conjugate Prior   the computation of the MAP   a similar EM algorithm as   for the maximum likelihood estimate.    the   of a special form of the prior called a conjugate prior.
+User Preferences and Pseudo Counts    how to incorporate  r preferences into the analysis by adding additional counts or pseudo counts to reflect the prior. 
+PLSA Deficiencies    the deficiencies of Probabilistic Latent Semantic Analysis (PLSA).  is not a generative model and has many parameters making it complex and prone to overfitting. 
+LDA Improvement   Latent Dirichlet Allocation (LDA) as an improvement over PLSA. LDA makes PLSA a generative model by imposing a Dirichlet prior on the model parameters.
+LDA vs PLSA  compares LDA and PLSA. While LDA is theoretically more appealing due to its Bayesian nature and fewer parameters in practice both models tend to perform similarly. 
+Properties of Topic Models   the properties of topic models. se models provide a general principle for mining and analyzing topics in text with many applications.
+Suggested Readings  provides suggested readings for further understanding of probabilistic topic models techniques for automatically labeling a topic model and empirical comparison of LDA and PLSA. 
+description
+Text Clustering  topic   the concept of text clustering its importance in topic mining and analysis and the basic questions about clustering.  also   the general technique of data mining the idea of discovering natural structures in data and the concept of grouping similar objects together. 
+Defining Similarity  topic   the challenge of defining similarity in the context of text clustering.  explains how the perspective of assessing similarity also known as the clustering bias needs to be clearly defined by the  r to make the clustering problem well-defined. 
+Examples of Text Clustering  topic provides examples of text clustering setups such as clustering documents in a text collection clustering terms clustering text segments and clustering large text objects like websites or articles written by the same author. 
+Importance of Text Clustering  topic explains why text clustering is interesting and  ful particularly for exploratory text analysis.    how clustering can help in understanding the overall content of a collection linking similar text objects together creating a structure on the text data and inducing additional features to represent text data. 
+Applications of Text Clustering  topic   specific applications of text clustering such as clustering search results and understanding major customer complaints based on their emails. 
+Probabilistic Generative Models for Text Clustering topic delves into the   of probabilistic generative models for text clustering.  explains how to design a generative model that would adopt the output or structure that we hope to model.
+Mixture Models for Document Clustering  topic   the   of mixture models for document clustering.  explains how these models differ from topic models with the main difference being that in mixture models the choice of   a particular distribution is made just once for document clustering. 
+Likelihood Function in Document Clustering topic   the likelihood function in document clustering.  explains how to calculate the probability of observing a document and how this differs from the probability in topic models.
+Parameter Estimation topic   the process of parameter estimation in the context of text clustering.  maximum likelihood estimator is   for this purpose.
+Cluster Allocation  topic delves into the process of assigning documents to clusters.    the   of likelihood and prior probabilities to compute the posterior probability of theta given a document. 
+Model Estimation topic is about how to compute the estimate of the model   for text clustering.
+E-Step and M-Step in Algorithm  topic explains the E-Step and M-Step in the Algorithm   for document clustering.    the initialization of parameters the computation of the likelihood and the inference of the distribution   to generate each document. 
+Normalization and Underflow Problem topic   the potential problem of underflow in the computation of probabilities.  explains how normalization can be   to avoid this problem and make the numerators and denominators more manageable.
+Re-estimation of Parameters in M-Step topic   the re-estimation of parameters in the M-Step of the Algorithm.  explains how the probabilities of words in each distribution are estimated and how these probabilities are normalized.
+Generative Probabilistic Models for Text Clustering topic   the   of generative probabilistic models for text clustering.  explains how a mixture model is defined for text clustering and how the likelihood function is computed.
+Similarity-Based Approaches to Text Clustering  topic   the concept of similarity-based clustering which involves specifying a similarity function to measure the similarity between two text objects. 
+Hierarchical Agglomerative Clustering (HAC)  topic   Hierarchical Agglomerative Clustering (HAC) a method where similar objects are gradually grouped together in a bottom-up fashion to form larger and larger groups. 
+Group Similarity Computation Methods  topic explores   methods for computing group similarity including single-link complete-link and average-link methods. 
+K-Means Clustering  topic introduces k-Means clustering a method that starts with randomly selected vectors as centroids of clusters and then iteratively improves the clustering by assigning vectors to the cluster whose centroid is closest. 
+Comparison of Model-Based and Similarity-Based Approaches  topic compares model-based and similarity-based approaches to clustering. While model-based approaches   an implicit similarity function and can discover complex clustering structures they do not easily allow for direct control of the similarity measure. On the other hand similarity-based approaches are more flexible in specifying similarity functions but their objective function is not always clear. 
+Text Clustering Discusses the importance of evaluating text clustering methods to determine the best one. Emphasizes the need to specify the perspective of similarity which is crucial for evaluation as it determines the clustering bias. 
+Direct Evaluation Involves comparing system-generated clusters to ideal clusters created by humans. Measures such as purity normalized mutual information and F measure are   to quantify the similarity between the clusters. 
+Indirect EvaluationAssesses the  fulness of clustering results for intended applications.  method is application-specific and the best cluster result depends on the application.
+Text Clustering ApplicationsDiscusses the   of text clustering as an unsupervised text mining technique that provides an overall picture of text content.  effectiveness of a method depends on whether the desired clustering bias is captured appropriately.
+Determining the Optimal Number of ClustersDiscusses the challenge of deciding the optimal number of clusters for order cluster methods.  optimal number can be determined by the application or by assessing the fitness to data.
+Evaluation of Clustering ResultsDiscusses the evaluation of clustering results both directly and indirectly to get a comprehensive understanding of how well a method works.
+Text Categorization Covers the importance of text categorization in text data mining and analytics.  is   in topic mining and analysis opinion mining and sentiment analysis and text-based prediction. 
+Problem of Text Categorization Defines the problem of text categorization which involves classifying text objects into one or more predefined categories. 
+Examples of Text Categorization Provides specific examples of text categorization including categorizing documents passages sentences or collections of text. 
+Applications of Text Categorization Covers various applications of text categorization such as news categorization biomedical article categorization spam email detection sentiment categorization of product reviews or tweets automatic email routing or sorting and author attribution. 
+Variants of Text Categorization Discusses the   variants of text categorization including binary categorization K-category categorization hierarchical categorization and joint categorization. 
+Importance of Text Categorization Explains why text categorization is important.  helps enrich text representation facilitates aggregation of text content and allows for the inference of properties of entities associated with the text data. 
+Machine Learning for Text CategorizationDiscusses the   of machine learning methods to alleviate the problems associated with manual text categorization.
+Supervised LearningCovers the general setting of supervised learning in machine learning for text categorization.
+Generative and Discriminative ClassifiersDistinguishes between two kinds of classifiers: generative classifiers and discriminative classifiers.
+Generative Probabilistic Models for Text CategorizationDiscusses the   of generative probabilistic models for text categorization.
+Document Clustering and Text CategorizationDelves into the similarities between document clustering and text categorization.
+Naive Bayes Classifier Introduces the Naive Bayes Classifier a method that assigns a document to the category that has the highest probability of generating the document. 
+Estimating Probabilities for Naive Bayes ClassifierDiscusses how to estimate the prior probabilities of categories and word distributions for the Naive Bayes Classifier.
+Smoothing in Naive Bayes ClassifierDelves into the concept of smoothing in the Naive Bayes Classifier.
+Scoring Function in Naive Bayes ClassifierExplains the scoring function   in the Naive Bayes Classifier.
+description
+Discriminative Classifiers for Text Categorization Discusses the concept of discriminative classifiers in text categorization modeling the conditional distribution of labels given the data directly and the advantages of this approach. 
+Logistic Regression Introduces logistic regression as a discriminative classifier explaining how it models the dependency of a binary response variable on some predictors and its   in text categorization. 
+K-Nearest Neighbors (K-NN) Introduces the K-NN approach as a discriminative classifier explaining how it estimates the conditional probability of a label given data by finding the K most similar examples in the training set. 
+Soft Margin and Error Analysis Introduces the concept of soft margin which allows some errors in classification and   the importance of error analysis in designing effective features and improving classifier performance. 
+Feature Design and Training Examples Emphasizes the importance of feature design in text categorization discussing various techniques for designing effective features and the importance of training examples. 
+Domain Adaptation and Transfer Learning Discusses advanced machine learning techniques like domain adaptation and transfer learning which are  ful when the training data and the unlabeled data are very  . 
+Evaluation of Text Categorization Discusses the importance of evaluating text categorization methods to determine which one works best for a particular application introducing the Cranfield Evaluation Methodology. 
+Classification Accuracy Introduces the concept of classification accuracy which measures the percentage of correct decisions made by a system and   its limitations. 
+Precision and Recall Explains the measures of precision and recall which were proposed by information retrieval researchers in the 1960s. 
+Per-Category EvaluationDiscusses the importance of evaluating the performance of a system on a per-category basis.
+F Measure Introduces the F measure which is a harmonic mean of precision and recall and   its benefits. 
+ Aggregation of Precision Recall and F Score  Foc s on the aggregation of precision recall and F score for each category and document. 
+Micro-Average vs Macro-AverageCompares micro-average and macro-average in text categorization.
+Evaluation from a Ranking PerspectiveDiscusses the evaluation of categorization results from a ranking perspective.
+Importance of Correct EvaluationEmphasizes the importance of correct evaluation in text categorization.
+Opinion Mining and Sentiment Analysis Covers the concept of mining knowledge from text data generated by humans foc  on their opinions and sentiments. 
+Opinion RepresentationDiscusses the basic and enriched opinion representation.
+Opinion Mining TaskDefines the task of opinion mining as taking text data as input to generate a set of opinion representations.
+Importance of Opinion MiningDiscusses the importance and  fulness of opinion mining.
+Sentiment Classification Covers the process of sentiment classification which involves determining the sentiment of a review or opinion. 
+Text Categorization TechniquesDiscusses various techniques   in text categorization.
+Feature Design and Overfitting Explores the challenges in feature design including the trade-off between exhaustivity and specificity and the risk of overfitting. 
+Machine Learning and Error Analysis Discusses the combination of machine learning error analysis and domain knowledge in feature design. 
+Ordinal Logistic Regression for Sentiment Analysis Discusses the   of ordinal logistic regression for sentiment analysis specifically for rating prediction. 
+Binary Sentiment CategorizationDelves into the   of logistic regression for binary sentiment categorization.
+Multi-level Rating PredictionExplores the application of binary logistic regression to multi-level rating prediction.
+Ordinal Logistic Regression ImprovementPresents an improvement to the ordinal logistic regression method by tying the beta parameters across all classifiers.
+Decision Rule for Rating AssignmentExplains the decision rule for assigning ratings   the improved ordinal logistic regression method.
+description
+Latent Aspect Rating Analysis A method   to perform detailed analysis of reviews with overall ratings by decomposing overall ratings into ratings on   aspects such as value rooms location and service. 
+Aspect Segmentation  process of identifying and separating   aspects discussed in a review   seed words like location room or price to retrieve relevant segments. 
+Latent Rating Regression A method   to predict overall ratings based on the frequencies of words in   aspects.  involves predicting the aspect rating   the frequencies and weights of words in each aspect and assuming that the overall rating is a weighted combination of these aspect ratings. 
+Parameter Estimation process of estimating parameters in the Latent Aspect Rating Analysis model   the maximum likelihood estimate to find the settings of these parameters that maximize the observed ratings conditional on their respective reviews.
+Rating Decomposition decomposition of ratings into aspect ratings to provide detailed opinions at the aspect level and reveal differences in opinions of   reviewers.
+Sentimental Weights for WordsDiscusses the sentimental weights for words in   aspects and how this approach can learn sentiment information directly from the data.
+Analyzing Users Rating Behavior   of the model to infer information about  rs' rating behavior and reveal interesting patterns in the data.
+Personalized Ranking or Recommendation of Entities application of the model for personalized ranking or recommendation of entities by inferring the reviewers' weights on   dimensions.
+Opinion Mining  importance of opinion mining and its various applications including the   of text sentiment analysis and the need for enriched feature implementation. 
+Text-Based Prediction   of text data to infer values of other variables in the real world that may not be directly related to the text.
+Content Analysis or Topic Mining Characterizing the content of text foc  more on the subject of content which reflects what we know about the opinion holder. 
+Data Mining Loop  general process for making a prediction based on data including text data. 
+Designing Effective PredictorsHow to design effective predictors and generate such predictors from text   text mining techniques.
+Joint Mining of Text and Non-Text DataHow to jointly mine text and non-text data to generate enriched features for prediction.
+Contextual Text MiningMining text in the context defined by non-text data.
+Pattern AnnotationHow text data can help interpret patterns discovered from non-text data.
+Use of Text Context  s of text context in data partitioning and comparative analyses.
+Partitioning of Text Data   ways text data can be partitioned   context.
+Knowledge Discovery and Context ComparisonHow contextual text mining enables the discovery of knowledge associated with   contexts and the comparison of   contexts.
+Applications of Contextual Text MiningSpecific questions that require contextual text mining for their answers.
+Contextual Probabilistic Latent Semantic Analysis (CPLSA)A model that makes assumptions about the dependency of topics on context and allows for the discovery of   variations of the same topic in   contexts.
+Contextual Text Mining ApplicationsExamples of how contextual text mining can be applied in real-world scenarios.
+Event Impact AnalysisAn application of the CPLSA model to understand the impact of events on research articles.
+Network Supervised Topic ModelA concept where the network can impose constraints on the topics of text.
+NetPLSAA specific instantiation of the network supervised topic model that incorporates constraints imposed by a network.
+Text Mining in Network Context broader view of text mining in the context of a network.
+erative Causal Topic ModelingAn approach that involves an iterative adjustment of topics discovered by topic models   time series to induce a product.
+Granger Causality TestA commonly   measure for causality that involves   a regression model to predict a time series based on its historical information.
+Text-based Prediction   of text-based prediction in big data applications to uncover new knowledge about the world and support decision-making.
